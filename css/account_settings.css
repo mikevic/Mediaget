@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-image:url('../images/bg-login.png');
+	background-repeat:repeat;
+	color:white;
+	font:13px/1.3 'Segoe UI',Arial, sans-serif;
+	color:#999;
+	
+}
+
+
+#container  {
+	width: 1080px;
+	margin:0 auto;
+
+}
+
+#header	{
+
+width: 1080px;
+height: 100px;
+position: relative;
+}
+
+#menu	{
+
+width: 1080px;
+height: 50px;
+position: relative;
+}
+
+#leftnav {
+
+    float: left;
+    width: 40px;
+    border-right-width:1px;
+    border-right-style:solid;
+    border-right-color:black;
+	z-index: 10000;
+	position: absolute;
+
+}
+
+#profile_settings {
+
+	width : 1039px;
+	float : right;
+	margin-left: 150px auto 100px;
+	
+}
+
+form ul{
+	list-style:none;
+}
+
+form li{
+	padding: 15px;
+}
+
+form label{
+	width:370px;
+	font-size:15px;
+	color:#bbb;
+	display: inline-block;
+}
