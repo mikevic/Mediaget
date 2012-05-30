@@ -10,6 +10,16 @@ display : none;
 #body1 {
 display : none;
 }
+.modal {
+		width : 650px;
+		height : 550px;
+		display: none;
+		color:black;
+		z-index:9999999999;
+	  }
+.modal h3 {
+		color:black;
+	}
 </style>
 <script type="text/javascript">
 
@@ -109,6 +119,19 @@ require 'load_movies.php';
 </div>
 
 <script>
+function closemodal()
+	{
+		$('#myModal').css('display','none');
+	}
+
+function generate_modal_window(id)
+	{
+		$.post("ajax/get_episode_embed_code.php",{epi_id:id},function(data){
+			$('#embedcodemodal').html(data);
+		});
+		$('#myModal').css('display','inherit');
+	}
+
 $(document).ready(function() {
 	$("#latest_stuff").css('display','inherit');
 	$("#body1").css('display','inherit');
@@ -129,7 +152,7 @@ $(document).ready(function() {
    }
 });
 
-	
+
 	
 	});
 	
@@ -154,7 +177,8 @@ $(document).ready(function() {
 
 });
 	
-
+$('#myModal').modal();
+$('#myModal').modal('hide');
 </script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -162,7 +186,19 @@ $(document).ready(function() {
 <link type="text/css" href="css/box.css" rel="stylesheet" />
 <link type="text/css" href="css/main.css" rel="stylesheet" />
 <link type="text/css" href="css/dot-luv/jquery-ui.css" rel="stylesheet" />
-
+	
+	
+	<div class="modal" id="myModal">
+		<div class="modal-header">
+			<h3>Mediaget - Watch Online</h3>
+		</div>
+		<div class="modal-body">
+			<div id="embedcodemodal"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" onclick="closemodal()">Close</a>
+		</div>
+	</div>
 </body>
 </html>
 <?

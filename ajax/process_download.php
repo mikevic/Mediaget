@@ -20,6 +20,7 @@ if(isset($_POST['id']))
 			$link6 = $link_details['link6'];
 			$link7 = $link_details['link7'];
 			$link8 = $link_details['link8'];
+			$embed_code = $link_details['embed_code'];
 			if(!empty($link1))
 			{
 			$link1_filehost = check_filehost_name($link1);
@@ -99,6 +100,10 @@ if(isset($_POST['id']))
 				echo '<br />';
 			}
 			$flag = $flag+1;
+			}
+			if(!empty($embed_code))
+			{
+			echo '<a href="#" onclick="generate_modal_window('.$id.')"><img src="http://mediaget.info/images/watch_online.png" width="100px height="100px" /></a>';
 			}
 		}
 		echo '<br />';
